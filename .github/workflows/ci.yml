@@ -1,0 +1,32 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # CI Pipeline
+  build:
+    name: CI Pipeline
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: ["20.x"]
+    steps:
+      # Checkout
+      - uses: actions/checkout@v3
+
+      # Install Node.js
+      - name: Install Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Install Node.js dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build Typescript
+      - name: Run build
+        run: npm run build
