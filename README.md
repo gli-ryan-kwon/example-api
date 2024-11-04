@@ -11,6 +11,10 @@
 
 [![CI Pipeline](https://github.com/gli-ryan-kwon/example-api/actions/workflows/ci.yml/badge.svg)](https://github.com/gli-ryan-kwon/example-api/actions/workflows/ci.yml)
 
+## Documentation
+
+Visit https://example-api-1q8e.onrender.com/api-docs to view Swagger documentation.
+
 ## Test Coverage
 
 | File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
