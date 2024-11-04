@@ -6,10 +6,10 @@
 <p style="color: gray">REST API for Example</p>
 </div>
 <p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=ts,nestjs,mongodb,jest" />
-  </a>
+  <img src="https://skillicons.dev/icons?i=ts,nestjs,mongodb,jest" />
 </p>
+
+[![CI Pipeline](https://github.com/gli-ryan-kwon/example-api/actions/workflows/ci.yml/badge.svg)](https://github.com/gli-ryan-kwon/example-api/actions/workflows/ci.yml)
 
 ## Test Coverage
 
