@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: ["20.x"]
+        node-version: ['20.x']
     steps:
       # Checkout
       - uses: actions/checkout@v3
@@ -26,6 +26,14 @@ jobs:
       # Install Node.js dependencies
       - name: Install dependencies
         run: npm install
+
+      # Run lint
+      - name: Run lint
+        run: npm run lint
+
+      # Run tests
+      - name: Run tests
+        run: npm run test
 
       # Build Typescript
       - name: Run build
