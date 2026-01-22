@@ -18,16 +18,14 @@ import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
 import { Cat } from './schemas/cat.schema';
-import { BadRequestResponseDto } from 'src/common/dto/bad-request-response.dto';
+import { BaseController } from 'src/common/controllers/base.controller';
 
-@ApiBadRequestResponse({
-  description: 'Bad Request',
-  type: BadRequestResponseDto,
-})
 @ApiTags('cats')
 @Controller('cats')
-export class CatsController {
-  constructor(private readonly catsService: CatsService) {}
+export class CatsController extends BaseController {
+  constructor(private readonly catsService: CatsService) {
+    super();
+  }
 
   @Post()
   @ApiOperation({ summary: 'Create a new cat' })

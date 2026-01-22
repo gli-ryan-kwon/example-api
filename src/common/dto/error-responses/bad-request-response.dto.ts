@@ -9,7 +9,7 @@ export class BadRequestResponseDto {
     description: 'List of the error messages',
     type: [String],
   })
-  message: string;
+  message: string[];
 
   @ApiProperty({ example: 400, description: 'The status code' })
   statusCode: number;
