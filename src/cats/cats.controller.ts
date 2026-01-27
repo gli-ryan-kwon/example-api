@@ -7,25 +7,18 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import {
-  ApiTags,
-  ApiOperation,
-  ApiResponse,
-  ApiParam,
-  ApiBadRequestResponse,
-} from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
 import { Cat } from './schemas/cat.schema';
-import { BaseController } from 'src/common/controllers/base.controller';
+import { ApiStandardErrors } from 'src/common/decorators/api-error-responses.decorator';
 
 @ApiTags('cats')
+@ApiStandardErrors()
 @Controller('cats')
-export class CatsController extends BaseController {
-  constructor(private readonly catsService: CatsService) {
-    super();
-  }
+export class CatsController {
+  constructor(private readonly catsService: CatsService) {}
 
   @Post()
   @ApiOperation({ summary: 'Create a new cat' })
